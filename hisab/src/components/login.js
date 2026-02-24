@@ -11,7 +11,7 @@ export default function Login(){
             m.style.color="red";
             m.innerHTML="Empty Feilds";
         }
-        const response=await fetch("http://localhost:5000/login",{
+        const response=await fetch("https://financial-intreset-calculation.onrender.com/login",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({uname:userName,upassword:password})
