@@ -13,6 +13,8 @@ const db = new Pool({
   ssl: { rejectUnauthorized: false },
 });
 
+const PORT = process.env.PORT || 5000;
+
 db.connect().then(() => console.log("Connected to PostgreSQL Successfully"))
 .catch(err => console.error("DB Connection Error:", err));
 
@@ -178,8 +180,8 @@ app.delete("/remove_katha/:sid", async (req, res) => {
     });
 });
 
-app.listen(5000,()=>{
-    console.log("Server is running on http://localhost:5000");
+app.listen(PORT,()=>{
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
 
 // create table users(uid serial primary key,uname varchar(256),uemail varchar(256),uphno varchar(256),upassword varchar(1080));
