@@ -5,7 +5,7 @@ export default function Saved(){
     let [type,settype]=useState("");
     async function getRecords(type){
         document.getElementById("title").textContent=type+" Saved Calculation's";
-        const response=await fetch(`http://localhost:5000/save_${type.toLowerCase()}/${localStorage.getItem('user_id')}`);
+        const response=await fetch(`https://financial-intreset-calculation.onrender.com/save_${type.toLowerCase()}/${localStorage.getItem('user_id')}`);
         const result=await response.json();
         const reverse=[...result.data].reverse();
         records=[];
@@ -14,7 +14,7 @@ export default function Saved(){
         display(reverse);
     }
     async function remove(sid) {
-        const response=await fetch(`http://localhost:5000/remove_${type.toLowerCase()}/${sid}`,{method:"DELETE"});
+        const response=await fetch(`https://financial-intreset-calculation.onrender.com/remove_${type.toLowerCase()}/${sid}`,{method:"DELETE"});
         if(response.status) {alert("Record removed Sucessfully");window.location.reload();}
         else alert("Failed to Remove");
     }

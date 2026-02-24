@@ -13,7 +13,7 @@ export default function Customer(){
                 document.getElementById("result").innerHTML="<b style='color:red;'>Please Enter Details</b>";
                 return;
             }
-            const response=await fetch("http://localhost:5000/save/katha",{
+            const response=await fetch("https://financial-intreset-calculation.onrender.com/save/katha",{
                 method:"POST",
                 headers:{"Content-Type":"application/json"},
                 body:JSON.stringify({uid:localStorage.getItem('user_id'),billno:billno,td:td,ld:ld,intr:intr,amount:amount,intrest:intrest,total:total})
