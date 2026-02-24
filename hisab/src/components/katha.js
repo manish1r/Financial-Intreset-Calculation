@@ -6,8 +6,8 @@ export default function Customer(){
     const [ld,setld]=useState(null);
     const [intr,setintr]=useState();
     let [amount,setamount]=useState();
-    let [intrest,setintrest]=useState();
-    let [total,settotal]=useState();
+    let [intrest]=useState();
+    let [total]=useState();
     async function save(){
             if(billno===null||td===null||ld===null||intr===null||amount===null){
                 document.getElementById("result").innerHTML="<b style='color:red;'>Please Enter Details</b>";
