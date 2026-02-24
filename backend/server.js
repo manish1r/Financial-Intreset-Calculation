@@ -49,34 +49,26 @@ app.post("/register", async (req, res) => {
     });
 });
 
-app.post("/register", async (req, res) => {
-    const { uname, uphno, uemail, upassword } = req.body;
+app.post("/login", async (req, res) => {
+    const { uname, upassword } = req.body;
 
-    const q1 = "select * from users where uname=$1";
-    db.query(q1, [uname], (er, res1) => {
-        if (er) throw er;
+    const q = "select * from users where uname=$1 and upassword=$2";
+    db.query(q, [uname, upassword], (err, result) => {
+        if (err) {
+            console.log("Login Err : ", err);
+            res.json({ message: "Server Failed to Login", status: false });
+            return;
+        }
 
-        if (res1.rows.length > 0)
-            return res.json({ message: "Username already Exists", status: false });
-
-        const q = "insert into users (uname,uphno,uemail,upassword) values($1,$2,$3,$4) returning uid";
-        db.query(q, [uname, uphno, uemail, upassword], (err, result) => {
-            if (err) {
-                console.log("Regisgter Err : ", err);
-                res.json({ message: "Server Failed to Register", status: false });
-                return;
-            }
-
-            if (result.rowCount > 0) {
-                return res.json({
-                    message: "Registered Sucessfully",
-                    status: true,
-                    uid: result.rows[0].uid
-                });
-            }
-            else
-                return res.json({ message: "Failed to register", status: false });
-        });
+        if (result.rows.length > 0) {
+            return res.json({
+                message: "Login Sucessfully",
+                status: true,
+                uid: result.rows[0].uid
+            });
+        }
+        else
+            return res.json({ message: "Invalid credentials", status: false });
     });
 });
 
