@@ -48,7 +48,7 @@ export default function Saved() {
     return (
         <div className="center">
             <div className="container">
-                <h2>Saved Calculations</h2>
+                <h2 id="title">Saved Calculations</h2>
 
                 <div className="filter-buttons">
                     <button onClick={() => getRecords("Customer")}>
