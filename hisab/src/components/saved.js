@@ -15,7 +15,7 @@ export default function Saved(){
     }
     async function remove(sid) {
         const response=await fetch(`http://localhost:5000/remove_${type.toLowerCase()}/${sid}`,{method:"DELETE"});
-        if(response.status) alert("Record removed Sucessfully");
+        if(response.status) {alert("Record removed Sucessfully");window.location.reload();}
         else alert("Failed to Remove");
     }
     function display(data){

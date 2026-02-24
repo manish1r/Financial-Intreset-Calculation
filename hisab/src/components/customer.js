@@ -17,7 +17,7 @@ export default function Customer(){
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({uid:localStorage.getItem('user_id'),billno:billno,td:td,ld:ld,intr:intr,amount:amount,intrest:intrest,total:total})
         });
-        if(response.status) alert("saved sucessfully");
+        if(response.status){ alert("saved sucessfully");window.location.reload();}
         else alert("Failed to save");
     }
     function calIntrest(){
