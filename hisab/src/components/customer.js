@@ -99,7 +99,7 @@ export default function Customer(){
                 <button type="button" onClick={calIntrest}>Calculate</button>
                 <button type="button" onClick={save}>Save</button>
                 <br/><br/>
-                <div class="card" id="result"></div> 
+                <div class="card" id="result"><b>Result</b></div> 
             <div className="row"></div>
         </div>
         </div>
