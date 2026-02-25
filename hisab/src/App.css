@@ -27,6 +27,9 @@ button {
   padding: 8px 15px;
   font-size: 30px;
 }
+label{
+  font-size: 30px;
+}
 .card {
   margin: 13px;
   border: 3px solid #ddd;
@@ -42,5 +45,5 @@ button {
     background-color: #fff;
 }
 h2{
-  font-size: 45px;
+  font-size: 50px;
 }
