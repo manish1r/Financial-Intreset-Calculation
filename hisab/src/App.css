@@ -25,9 +25,8 @@ input {
 button {
   margin: 5px;
   padding: 8px 15px;
-  font-size: 30px;
 }
-label{
+input,button,label,#result{
   font-size: 30px;
 }
 .card {
@@ -37,12 +36,13 @@ label{
   border-radius: 10px;
 }
 .list {
-    max-height: 300px;
+    max-height: 500px;
     overflow-y: auto;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     background-color: #fff;
+    font-size: 30px;
 }
 h2{
   font-size: 50px;
