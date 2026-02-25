@@ -45,7 +45,7 @@ export default function Saved(){
                 <button onClick={()=>getRecords("Customer")}>Customer</button><br/>
                 <button onClick={()=>getRecords("Katha")}>Katha</button><br/><br/>
             </div>
-            <div class="card" className="list">
+            <div className="list">
                 {records.length === 0 ? <p>No Records Found</p> : display(records)}
             </div>
         </div>
