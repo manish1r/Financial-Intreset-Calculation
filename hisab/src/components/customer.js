@@ -100,7 +100,7 @@ export default function Customer(){
                 <button type="button" onClick={save}>Save</button>
                 <br/><br/>
                 <div id="result"></div> 
-            <div className="row"></div>
+            <div class="card" className="row"></div>
         </div>
         </div>
     );
